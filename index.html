@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html>
+    <head> 
+        <meta charset="UTF-8">
+         <title >RO.ny</title> 
+        <!--script src="https://raw.githubusercontent.com/dorukeker/gyronorm.js/master/dist/gyronorm.complete.min.js" async></script-->
+        <!--script src="https://rawgit.com/dorukeker/gyronorm.js/master/dist/gyronorm.complete.min.js" async></script-->
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    <body style="background-color:black; color:white;  font-size: 32px;">
+	
+        <h1 style="color:red ;font-family: NeoTech; text-align:center; font-size: 64px; font-weight: bold; letter-spacing: 5px;">
+            <span>Robot medical</span>
+        </h1>
+        <div id="container" class="container">
+            <div class="overlayWrapper" id="remote">
+                <video id="remote-video" autoplay="" width="640" height="480">
+                    Your browser does not support the video tag.
+                </video>
+                <p class="overlay" style= "font-size: 20px;">robot</p>       
+            </div>
+<div id="containermare" class="containermare">
+
+            <div class="overlayWrapper" id="local">
+                <video id="local-video" autoplay="" width="532" height="400">
+                    Your browser does not support the video tag.
+                </video>
+                <p class="overlay" style="font-size: 20px;">operator</p>
+            </div>
+<div id="overlayWrapper" class="gol">
+<p style="font-size: 20px; color:black;"> robot </p>
+</div>
+<div class="overlayWrapper" id="sigla">
+		<img src="sigla.png" style=" width:440px;height:250px; "> 
+		</div>
+
+</div>
+
+</div>
+        <div class="container" id="setting_control" >
+ <div id = "control_buttons" style="align:right">
+                <div>
+                    <button id="forward" class = "btn btn-default">&#8593;</button>
+                </div>
+
+                <div id="left_right">
+                    <button id="left" class = "btn btn-default">&#8592;</button>
+                    <button id="right" class = "btn btn-default">&#8594;</button>
+                </div>
+                <div>
+                    <button id="backward" class = "btn btn-default">&#8595;</button>
+                </div>
+            </div>
+
+            <div id = "setting">
+                <div id="controls" >
+                    <button style="color:black;" type=button id="pause" onclick="pause();" title="pause or resume local player">Pause</button>
+                    <button style="color:black;" type=button id="mute" onclick="mute();" title="mute or unmute remote audio source">Mute</button>
+                    <button style="color:black;" type=button id="fullscreen" onclick="fullscreen();">Fullscreen</button>
+                             
+                                <fieldset>
+		
+                    <div>
+                        <span>Audio:</span>
+                        <label><input type="checkbox" style="zoom:2.5" onclick="singleselection('audio_cast', 'cast_mic');" id="cast_mic" name="audio_cast" value="microphone">mic</label>
+                        <label><input type="checkbox" style="zoom:2.5" id="echo_cancellation" name="audio_processing" title="disable any audio processing when casting music" checked>echo</label>
+                        <!--label><input type="checkbox" onclick="singleselection('audio_cast', 'cast_tab');" id="cast_tab" name="audio_cast" value="system">tab</label-->
+                    </div>
+                    <div>
+                        <span>Video:</span>
+               		<label><input type="checkbox"  style="zoom:2.5" onclick="remote_hw_vcodec_selection();"  id="remote_hw_vcodec" name="remote_hw_vcodec" value="remote_hw_vcodec" title="try to force the use of the hardware codec for both encoding and decoding if enabled and supported">HD</label>
+			<select id="remote_vformat" name="remote_vformat" onclick="remote_hw_vcodec_format_selection();" title="available resolutions and frame rates at the min., max. and start configured bitrates for adaptive streaming which will be scaled from the base 720p 30fps">
+        	            <option value="60" selected="selected">HD</option>
+                        </select>
+                        <label><input type="checkbox" style="zoom:2.5" onclick="singleselection('video_cast', 'cast_camera');" id="cast_camera" name="video_cast" value="camera">camera</label>
+                                           </div>
+                </fieldset>
+                
+                <div id="commands">
+                    <details closed>
+                        <summary><b>Advanced options</b></summary>
+                        <fieldset>
+                            <span>Remote Peer/Signalling Server Address: </span><input required type="text" id="signalling_server" value="192.168.1.8:8080" title="<host>:<port>, default address is autodetected"/><br>
+                            <span>Optional ICE Servers (STUN/TURN): </span><input type="text" id="ice_servers" value="" title="array of RTCIceServer objects as valid JSON string"/><br>
+                            <span>Trickle ICE: </span>
+                            <select onclick="trickleice_selection();" id="trickleice" name="trickleice" title="enable trickle ice">
+                                <option value="auto">auto</option>
+                                <option value="true" selected="selected">true</option>
+                                <option value="false">false</option>
+                            </select>
+                        </fieldset>
+                    </details>
+                    <button id="start" style="background-color: green; color: white" onclick="start();">START</button>
+                    <button disabled id="stop" style="background-color: red; color: white" onclick="stop();">STOP</button>
+                </div>
+            </div>
+                   </div>
+    <script src="main.js"></script>
+    </body>
+</html>
+
+

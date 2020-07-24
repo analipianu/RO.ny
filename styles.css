@@ -1,0 +1,103 @@
+#container {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: baseline;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+#containermare {
+    display: flex;
+    flex-flow: column-reverse;
+    align-items:center;
+height: 720px;
+}
+video {
+    background: #eee none repeat scroll 0 0;
+    border: 1px solid #aaa;
+}
+.overlayWrapper {
+    position: relative;
+
+}
+.overlayWrapper .overlay {
+    position: absolute;
+    top: 0;
+    left: 5px;
+}
+p {
+    margin: 0.125em;
+}
+small {
+    font-size: smaller;
+}
+#setting {
+    width: 50%;
+    float: left;
+}
+#control_buttons {
+    display:block;
+    float: right;
+    padding-top: 1%;
+    width: 24%;
+    margin-left: 0%;
+margin-right:0%;
+
+}
+#control_buttons button {
+    width: 100px;
+    height: 100px;
+    font-size: 65px;
+    color: red;
+    -webkit-text-stroke: medium;
+}
+#control_buttons button span{
+    font-size: 30px;
+}
+#control_buttons button:hover {
+    background-color: white;
+}
+#right {
+    margin-left: 24%;
+}
+#right span{
+    margin-left: 3px;
+    margin-top: 3px;
+}
+#left span{
+    margin-left: -6px;
+    margin-top: 3px;
+}
+#backward span{
+    margin-top: 5px;
+}
+#forward {
+    margin-left: 23.5%;
+}
+#backward {
+    margin-left: 23.5%;
+}
+#setting_control {
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 1920px;
+}
+#left_right {
+    margin-top: 4%;
+    margin-bottom: 4%;
+	
+}
+#commands button {
+    width: 200px;
+    height: 100px;
+    font-size: 40px;
+border-radius: 15px;
+
+}
+#start {
+    margin-right: 8%;
+}
+
+@font-face {
+  font-family: NeoTech;
+  src: url(NeoTech.otf);
+}
